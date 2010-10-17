@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+    <meta type="array">
+        <description>Locallang file for use in rzautocomplete</description>
+        <authorName>Raphael Zschorsch</authorName>
+    </meta>
+    <data type="array">
+        <languageKey index="default" type="array">
+            <label index="pi1_title">jQuery autocomplete searchbox</label>
+            <label index="pi1_plus_wiz_description">Inserts a autocomplete searchbox for indexed_search</label>
+        </languageKey>
+        <languageKey index="de" type="array">
+            <label index="pi1_title">jQuery Autocomplete Suchfeld</label>
+            <label index="pi1_plus_wiz_description">Fügt ein Autocomplete Suchfeld für indexed_search hinzu</label>
+        </languageKey>
+    </data>
+</T3locallang>

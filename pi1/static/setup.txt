@@ -1,0 +1,48 @@
+# # Enable jQuery globally?
+page.headerData.1425 = COA
+page.headerData.1425.1 = TEXT
+page.headerData.1425.1.value (
+<script type="text/javascript" src="typo3conf/ext/rzautocomplete/res/js/jquery-1-4-3.js"></script>
+)
+page.headerData.1425.1.if.isFalse = {$plugin.rzautocomplete.enableGlobal}
+
+[globalVar = LIT:1 = {$plugin.rzautocomplete.noConflict}]
+page.headerData.1425.1.value (
+<script type="text/javascript" src="typo3conf/ext/rzautocomplete/res/js/jquery-1-4-3-noconflict.js"></script>
+)
+[global]  
+
+# # CSS File
+page.headerData.1425.2 = TEXT
+page.headerData.1425.2.value (
+
+<link type="text/css" media="screen" rel="stylesheet" href="typo3conf/ext/rzautocomplete/res/css/jquery.autocomplete.css" />
+)
+
+page.headerData.1425.2.if.isFalse = {$plugin.rzautocomplete.cssPath}
+
+page.headerData.1425.3 = TEXT
+page.headerData.1425.3.value (
+
+<link type="text/css" media="screen" rel="stylesheet" href="{$plugin.rzautocomplete.cssPath}" />
+)
+page.headerData.1425.3.if.isTrue = {$plugin.rzautocomplete.cssPath}
+
+# # JS File
+page.headerData.1425.4 = TEXT
+page.headerData.1425.4.value (
+
+<script type="text/javascript" src="typo3conf/ext/rzautocomplete/res/js/jquery.autocomplete.js"></script>
+)
+      
+plugin.tx_rzautocomplete_pi1 {
+  enableGlobal = {$plugin.rzautocomplete.enableGlobal}
+	searchPage = {$plugin.rzautocomplete.searchPage}
+  minChars = {$plugin.rzautocomplete.minChars}
+  maxResults = {$plugin.rzautocomplete.maxResults}
+  autoFill = {$plugin.rzautocomplete.autoFill}
+  delay = {$plugin.rzautocomplete.delay}
+  matchContains = {$plugin.rzautocomplete.matchContains}
+  submitClick = {$plugin.rzautocomplete.submitClick}
+	template = EXT:rzautocomplete/res/template/rzautocomplete.html
+}

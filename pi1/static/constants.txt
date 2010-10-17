@@ -1,0 +1,33 @@
+plugin.rzautocomplete {
+  
+# cat=rzautocomplete/enable/010; type=boolean; label=Enable jQuery globally;
+enableGlobal = 0
+
+# cat=rzautocomplete/enable/020; type=boolean; label=jQuery noConflict mode;
+noConflict = 0
+
+# cat=rzautocomplete/file/010; type=string; label=Path to CSS File: (usage like fileadmin/templates/css/styles.css;
+cssPath = 
+
+# cat=rzautocomplete/option/010; type=int; label=ID of search page;
+searchPage =
+
+# cat=rzautocomplete/option/020; type=int; label=Minimum number of chars;
+minChars = 3
+
+# cat=rzautocomplete/option/030; type=int; label=Maximum number of results;
+maxResults = 10
+
+# cat=rzautocomplete/option/040; type=boolean; label=Fill the textinput while still selecting a value;
+autoFill = 0
+
+# cat=rzautocomplete/option/050; type=int; label=The delay in milliseconds the autocompleter waits after a keystroke to activate itself;
+delay = 400
+
+# cat=rzautocomplete/option/060; type=boolean; label=Whether or not the comparison looks inside (i.e. does "ba" match "foo bar") the search results;
+matchContains = 0
+
+# cat=rzautocomplete/option/070; type=boolean; label=Submit form onclick if there are results;
+submitClick = 1
+
+}   
