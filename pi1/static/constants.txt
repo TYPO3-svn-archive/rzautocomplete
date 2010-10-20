@@ -27,10 +27,16 @@ delay = 400
 # cat=rzautocomplete/option/060; type=boolean; label=Whether or not the comparison looks inside (i.e. does "ba" match "foo bar") the search results;
 matchContains = 0
 
-# cat=rzautocomplete/option/070; type=boolean; label=Submit form onclick if there are results;
+# cat=rzautocomplete/option/070; type=boolean; label=Submit form onclick if there are results (This will only work when multiple is set to 0);
 submitClick = 1
 
 # cat=rzautocomplete/option/080; type=boolean; label=Whether to scroll when more results than configured;
 scroll = 1
+
+# cat=rzautocomplete/option/090; type=boolean; label=If this is set to true, the first autocomplete value will be automatically selected on tab/return, even if it has not been handpicked by keyboard or mouse action. If there is a handpicked (highlighted) result, that result will take precedence;
+selectFirst = 1
+
+# cat=rzautocomplete/option/100; type=boolean; label=Whether to allow more than one autocompleted-value to enter;
+multiple = 0
 
 }   

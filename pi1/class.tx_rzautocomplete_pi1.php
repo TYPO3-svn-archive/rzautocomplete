@@ -62,10 +62,12 @@ class tx_rzautocomplete_pi1 extends tslib_pibase {
             autoFill: '.$conf['autoFill'].',
             delay: '.$conf['delay'].',
             matchContains: '.$conf['matchContains'].',
-            scroll: '.$conf['scroll'].'
+            scroll: '.$conf['scroll'].',
+            selectFirst: '.$conf['selectFirst'].',
+            multiple: '.$conf['multiple'].'
           });';
     
-    if($conf['submitClick'] == '1') {
+    if($conf['submitClick'] == '1' && $conf['multiple'] == '0') {
       $content .= '     
           jQuery("#'.$pre.'_word").result(function (event, data, formatted) {
             jQuery("#'.$pre.'_form").submit();

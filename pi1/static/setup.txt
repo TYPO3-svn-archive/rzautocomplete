@@ -45,5 +45,7 @@ plugin.tx_rzautocomplete_pi1 {
   matchContains = {$plugin.rzautocomplete.matchContains}
   submitClick = {$plugin.rzautocomplete.submitClick}
   scroll = {$plugin.rzautocomplete.scroll}
+  selectFirst = {$plugin.rzautocomplete.selectFirst}
+  multiple = {$plugin.rzautocomplete.multiple}
 	template = EXT:rzautocomplete/res/template/rzautocomplete.html
 }
