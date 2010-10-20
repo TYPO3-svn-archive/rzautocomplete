@@ -30,4 +30,7 @@ matchContains = 0
 # cat=rzautocomplete/option/070; type=boolean; label=Submit form onclick if there are results;
 submitClick = 1
 
+# cat=rzautocomplete/option/080; type=boolean; label=Whether to scroll when more results than configured;
+scroll = 1
+
 }   

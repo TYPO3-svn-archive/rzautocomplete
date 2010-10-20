@@ -61,7 +61,8 @@ class tx_rzautocomplete_pi1 extends tslib_pibase {
             max: '.intval($conf['maxResults']).',
             autoFill: '.$conf['autoFill'].',
             delay: '.$conf['delay'].',
-            matchContains: '.$conf['matchContains'].'
+            matchContains: '.$conf['matchContains'].',
+            scroll: '.$conf['scroll'].'
           });';
     
     if($conf['submitClick'] == '1') {

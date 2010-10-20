@@ -44,5 +44,6 @@ plugin.tx_rzautocomplete_pi1 {
   delay = {$plugin.rzautocomplete.delay}
   matchContains = {$plugin.rzautocomplete.matchContains}
   submitClick = {$plugin.rzautocomplete.submitClick}
+  scroll = {$plugin.rzautocomplete.scroll}
 	template = EXT:rzautocomplete/res/template/rzautocomplete.html
 }
