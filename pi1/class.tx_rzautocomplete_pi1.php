@@ -64,7 +64,8 @@ class tx_rzautocomplete_pi1 extends tslib_pibase {
             matchContains: '.$conf['matchContains'].',
             scroll: '.$conf['scroll'].',
             selectFirst: '.$conf['selectFirst'].',
-            multiple: '.$conf['multiple'].'
+            multiple: '.$conf['multiple'].',
+            multipleSeparator: "'.$conf['multipleSeparator'].' "
           });';
     
     if($conf['submitClick'] == '1' && $conf['multiple'] == '0') {

@@ -39,4 +39,7 @@ selectFirst = 1
 # cat=rzautocomplete/option/100; type=boolean; label=Whether to allow more than one autocompleted-value to enter;
 multiple = 0
 
+# cat=rzautocomplete/option/110; type=string; label=Seperator to put between values when using multiple option;
+multipleSeparator = , 
+
 }   

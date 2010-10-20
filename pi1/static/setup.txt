@@ -47,5 +47,6 @@ plugin.tx_rzautocomplete_pi1 {
   scroll = {$plugin.rzautocomplete.scroll}
   selectFirst = {$plugin.rzautocomplete.selectFirst}
   multiple = {$plugin.rzautocomplete.multiple}
+  multipleSeparator = {$plugin.rzautocomplete.multipleSeparator}
 	template = EXT:rzautocomplete/res/template/rzautocomplete.html
 }
