@@ -40,8 +40,8 @@ class rzautocomplete {
 	}
 		
 	function main() { 
-    $list_array = array();
-    $res = $this->getList($_GET['q'],$_GET['language']);
+    $list_array = array();        
+    $res = $this->getList($_GET['q'],$_GET['language'],$_GET['limit']);
     while($row=$GLOBALS['TYPO3_DB']->sql_fetch_assoc($res)){
       $list_array[] = $row['baseword'];
     }
@@ -50,9 +50,7 @@ class rzautocomplete {
     }
   }   
 
-	function getList($search,$language){
-		$config=unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['rzautocomplete']);
-
+	function getList($search,$language,$limit){    
 		$words=t3lib_div::trimExplode(' ',$search, 1);
 		
 		$where_array=array();
@@ -76,7 +74,7 @@ class rzautocomplete {
 			' FROM '.$from.
 			' WHERE '.$where.
 			' ORDER BY LENGTH(baseword)'.
-			($config['max_results'] ? 'LIMIT '.intval($config['max_results']) : '');
+			($limit ? 'LIMIT '.intval($limit) : '');
 
 		$res=$GLOBALS['TYPO3_DB']->sql_query($query);
 		return $res;

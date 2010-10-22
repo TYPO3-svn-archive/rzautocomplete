@@ -55,7 +55,7 @@ class tx_rzautocomplete_pi1 extends tslib_pibase {
     $content .= '      
       <script type="text/javascript">
         jQuery().ready(function() {        
-          jQuery("#'.$pre.'_word").autocomplete("index.php?eID=rzautocomplete&amp;language='.$marker['###LANGUAGE###'].'", {
+          jQuery("#'.$pre.'_word").autocomplete("index.php?eID=rzautocomplete&language='.$marker['###LANGUAGE###'].'", {
             minChars: '.intval($conf['minChars']).',
             selectFirst: false,
             max: '.intval($conf['maxResults']).',
