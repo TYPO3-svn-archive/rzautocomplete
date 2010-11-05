@@ -55,7 +55,8 @@ class rzautocomplete {
 		
 		$where_array=array();
 		foreach($words as $word){
-			$where_array[]='baseword LIKE '.$GLOBALS['TYPO3_DB']->fullQuoteStr('%'.$word.'%','index_words');
+			//$where_array[]='baseword LIKE '.$GLOBALS['TYPO3_DB']->fullQuoteStr('%'.$word.'%','index_words');
+			$where_array[]='baseword LIKE '.$GLOBALS['TYPO3_DB']->fullQuoteStr(''.$word.'%','index_words');
 		}
 
 		$from='index_words';
