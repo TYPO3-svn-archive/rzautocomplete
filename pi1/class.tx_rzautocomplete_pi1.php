@@ -54,29 +54,31 @@ class tx_rzautocomplete_pi1 extends tslib_pibase {
     // Add JS
     $content .= '      
       <script type="text/javascript">
-        jQuery().ready(function() {        
-          jQuery("#'.$pre.'_word").autocomplete("index.php?eID=rzautocomplete&language='.$marker['###LANGUAGE###'].'", {
-            minChars: '.intval($conf['minChars']).',
-            selectFirst: false,
-            max: '.intval($conf['maxResults']).',
-            autoFill: '.$conf['autoFill'].',
-            delay: '.$conf['delay'].',
-            matchContains: '.$conf['matchContains'].',
-            scroll: '.$conf['scroll'].',
-            selectFirst: '.$conf['selectFirst'].',
-            multiple: '.$conf['multiple'].',
-            multipleSeparator: "'.$conf['multipleSeparator'].' "
-          });';
+        /* <![CDATA[ */
+          jQuery().ready(function() {
+            jQuery("#'.$pre.'_word").autocomplete("index.php?eID=rzautocomplete&language='.$marker['###LANGUAGE###'].'", {
+              minChars: '.intval($conf['minChars']).',
+              selectFirst: false,
+              max: '.intval($conf['maxResults']).',
+              autoFill: '.$conf['autoFill'].',
+              delay: '.$conf['delay'].',
+              matchContains: '.$conf['matchContains'].',
+              scroll: '.$conf['scroll'].',
+              selectFirst: '.$conf['selectFirst'].',
+              multiple: '.$conf['multiple'].',
+              multipleSeparator: "'.$conf['multipleSeparator'].' "
+            });';
     
     if($conf['submitClick'] == '1' && $conf['multiple'] == '0') {
       $content .= '     
-          jQuery("#'.$pre.'_word").result(function (event, data, formatted) {
-            jQuery("#'.$pre.'_form").submit();
-          });';
+            jQuery("#'.$pre.'_word").result(function (event, data, formatted) {
+              jQuery("#'.$pre.'_form").submit();
+            });';
     }
     
     $content .= ' 
-        });
+          });
+        /* ]]> */
       </script>
     ';
 
