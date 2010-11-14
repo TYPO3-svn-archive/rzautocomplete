@@ -41,7 +41,7 @@ class rzautocomplete {
 		
 	function main() { 
     $list_array = array();        
-    $res = $this->getList($_GET['q'],$_GET['language'],$_GET['limit']);
+    $res = $this->getList($_GET['q'],$_GET['language'],$_GET['limit'],$_GET['startID']);
     while($row=$GLOBALS['TYPO3_DB']->sql_fetch_assoc($res)){
       $list_array[] = $row['baseword'];
     }
@@ -50,7 +50,7 @@ class rzautocomplete {
     }
   }   
 
-	function getList($search,$language,$limit){    
+	function getList($search,$language,$limit,$startID){    
 		$words=t3lib_div::trimExplode(' ',$search, 1);
 		
 		$where_array=array();
@@ -58,12 +58,18 @@ class rzautocomplete {
 			//$where_array[]='baseword LIKE '.$GLOBALS['TYPO3_DB']->fullQuoteStr('%'.$word.'%','index_words');
 			$where_array[]='baseword LIKE '.$GLOBALS['TYPO3_DB']->fullQuoteStr(''.$word.'%','index_words');
 		}
+		
+		// Section
+		if($startID != '') $section = 
+      ' AND index_section.rl0 IN ('.$startID.')'.
+			' AND index_section.phash = index_rel.phash'
+    ;		
 
 		$from='index_words';
 		$where='('.implode(' AND ',$where_array).')'.$this->multipleGroupsWhereClause;
 			
 		// Join with index_phash table
-		$from.=',index_rel,index_phash';
+		$from.=',index_rel,index_phash,index_section';
 		$where.=
 			' AND index_words.wid=index_rel.wid '.
 			' AND index_rel.phash = index_phash.phash'.

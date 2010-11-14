@@ -51,12 +51,16 @@ class tx_rzautocomplete_pi1 extends tslib_pibase {
     // Output
 		$content = $this->cObj->substituteMarkerArrayCached($template['RZAUTOCOMPLETE_TEMPLATE'],$marker);
 		
+		// Section
+		if($conf['startID'] != '') $section = '&startID='.$conf['startID'];
+		else $section = '';		
+		
     // Add JS
     $content .= '      
       <script type="text/javascript">
         /* <![CDATA[ */
           jQuery().ready(function() {
-            jQuery("#'.$pre.'_word").autocomplete("index.php?eID=rzautocomplete&language='.$marker['###LANGUAGE###'].'", {
+            jQuery("#'.$pre.'_word").autocomplete("index.php?eID=rzautocomplete&language='.$marker['###LANGUAGE###'].''.$section.'", {
               minChars: '.intval($conf['minChars']).',
               selectFirst: false,
               max: '.intval($conf['maxResults']).',
