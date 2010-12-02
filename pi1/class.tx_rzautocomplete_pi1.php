@@ -29,16 +29,44 @@ class tx_rzautocomplete_pi1 extends tslib_pibase {
 	var $scriptRelPath = 'pi1/class.tx_rzautocomplete_pi1.php';
 	var $extKey        = 'rzautocomplete';
 	var $pi_checkCHash = true;
-	
+
 	function main($content, $conf) {
 		$this->conf = $conf;
 		$this->pi_setPiVarDefaults();
 		$this->pi_loadLL();
-    
-    // Set template
+
+		// Include jQuery from t3jquery plugin if present, else use local files
+
+		// Local files
+		$js_jquery = t3lib_extMgm::siteRelPath('rzautocomplete').'res/js/jquery-1-4-3.js';
+		$js_jquery_autocomplete = t3lib_extMgm::siteRelPath('rzautocomplete').'res/js/jquery.autocomplete.js';
+
+		if ($conf['noConflict']){
+			$js_jquery = t3lib_extMgm::siteRelPath('rzautocomplete').'res/js/jquery-1-4-3-noconflict.js';
+		}
+
+		// checks if t3jquery is loaded
+		if (t3lib_extMgm::isLoaded('t3jquery')) {
+			require_once(t3lib_extMgm::extPath('t3jquery').'class.tx_t3jquery.php');
+		}
+		// if t3jquery is loaded and the custom Library had been created
+		if (T3JQUERY === true) {
+			tx_t3jquery::addJqJS();
+
+		}
+		else {
+			// check if we want to include jQuery
+			if (!$conf['enableGlobal']){
+				$GLOBALS['TSFE']->additionalHeaderData['rzautocomplete_jquery_js'] = '<script src="'.$js_jquery.'" type="text/javascript"></script>';
+			}
+		}
+
+		$GLOBALS['TSFE']->additionalHeaderData['rzautocomplete_autocomplete_js'] = '<script src="'.$js_jquery_autocomplete.'" type="text/javascript"></script>';
+
+		// Set template
 		$template['file'] = $this->cObj->fileResource($conf['template']);
 		$template['RZAUTOCOMPLETE_TEMPLATE'] = $this->cObj->getSubpart($template['file'],'###RZAUTOCOMPLETE_TEMPLATE###');
-                            
+
 		$pre = $this->prefixId.$this->cObj->data['uid'];
 		// Set markers
 		$marker['###SEARCH###'] = $this->pi_getLL('search');
@@ -48,15 +76,15 @@ class tx_rzautocomplete_pi1 extends tslib_pibase {
 		$marker['###FORM_ID###'] = $this->config['id']=$pre.'_form';
 		$marker['###WORD_ID###'] = $this->config['id']=$pre.'_word';
 
-    // Output
+		// Output
 		$content = $this->cObj->substituteMarkerArrayCached($template['RZAUTOCOMPLETE_TEMPLATE'],$marker);
-		
+
 		// Section
 		if($conf['startID'] != '') $section = '&startID='.$conf['startID'];
-		else $section = '';		
-		
+		else $section = '';
+
     // Add JS
-    $content .= '      
+    $content .= '
       <script type="text/javascript">
         /* <![CDATA[ */
           jQuery().ready(function() {
@@ -72,15 +100,15 @@ class tx_rzautocomplete_pi1 extends tslib_pibase {
               multiple: '.$conf['multiple'].',
               multipleSeparator: "'.$conf['multipleSeparator'].' "
             });';
-    
+
     if($conf['submitClick'] == '1' && $conf['multiple'] == '0') {
-      $content .= '     
+      $content .= '
             jQuery("#'.$pre.'_word").result(function (event, data, formatted) {
               jQuery("#'.$pre.'_form").submit();
             });';
     }
-    
-    $content .= ' 
+
+    $content .= '
           });
         /* ]]> */
       </script>
@@ -88,7 +116,7 @@ class tx_rzautocomplete_pi1 extends tslib_pibase {
 
 		return($content);
 	}
-} 
+}
 
 if (defined('TYPO3_MODE') && $TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/rzautocomplete/pi1/class.tx_rzautocomplete_pi1.php'])	{
 	include_once($TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/rzautocomplete/pi1/class.tx_rzautocomplete_pi1.php']);

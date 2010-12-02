@@ -10,6 +10,15 @@
 		</languageKey>
 		<languageKey index="de" type="array">
 			<label index="tt_content.list_type_pi1">jQuery Autocomplete Suchfeld</label>
-		</languageKey>		
+		</languageKey>
+		<languageKey index="es" type="array">
+			<label index="tt_content.list_type_pi1">jQuery autocompletar cuadro de búsqueda</label>
+		</languageKey>
+		<languageKey index="fr" type="array">
+			<label index="tt_content.list_type_pi1">jQuery autocomplete boîte de recherche</label>
+		</languageKey>
+		<languageKey index="it" type="array">
+			<label index="tt_content.list_type_pi1">jQuery autocomplete casella di ricerca</label>
+		</languageKey>
 	</data>
 </T3locallang>

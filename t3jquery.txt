@@ -1,0 +1,2 @@
+script=res/js/jquery.autocomplete.js
+components=jQuery,noConflict

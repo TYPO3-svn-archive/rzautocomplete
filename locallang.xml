@@ -13,5 +13,17 @@
             <label index="pi1_title">jQuery Autocomplete Suchfeld</label>
             <label index="pi1_plus_wiz_description">Fügt ein Autocomplete Suchfeld für indexed_search hinzu</label>
         </languageKey>
+        <languageKey index="es" type="array">
+            <label index="pi1_title">jQuery autocompletar cuadro de búsqueda</label>
+            <label index="pi1_plus_wiz_description">Agrega un cuadro de búsqueda para indexed_search autocompletar</label>
+        </languageKey>
+        <languageKey index="fr" type="array">
+            <label index="pi1_title">jQuery autocomplete boîte de recherche</label>
+            <label index="pi1_plus_wiz_description">Ajoute une indexed_search autocomplete boîte de recherche</label>
+        </languageKey>
+        <languageKey index="it" type="array">
+            <label index="pi1_title">jQuery autocomplete casella di ricerca</label>
+            <label index="pi1_plus_wiz_description">Aggiunge un autocompletamento indexed_search casella di ricerca aggiunto</label>
+        </languageKey>
     </data>
 </T3locallang>

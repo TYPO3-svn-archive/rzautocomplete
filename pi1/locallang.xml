@@ -6,20 +6,24 @@
 	</meta>
 	<data type="array">
 		<languageKey index="default" type="array">
-			<label index="search">Search</label>
+			<label index="search">Insert Searchterm ...</label>
 			<label index="submit">Submit</label>
 		</languageKey>
 		<languageKey index="de" type="array">
-			<label index="search">Suche</label>
+			<label index="search">Suchbegriff eingeben ...</label>
 			<label index="submit">Suchen</label>
 		</languageKey>
 		<languageKey index="es" type="array">
-			<label index="search">Búsqueda</label>
+			<label index="search">Búsqueda ...</label>
 			<label index="submit">Búsqueda</label>
 		</languageKey>
 		<languageKey index="fr" type="array">
-			<label index="search">Rechercher</label>
+			<label index="search">Rechercher ...</label>
 			<label index="submit">Rechercher</label>
+		</languageKey>
+		<languageKey index="it" type="array">
+			<label index="search">Termine di ricerca ...</label>
+			<label index="submit">Cerca</label>
 		</languageKey>
 	</data>
 </T3locallang>
